@@ -1,0 +1,33 @@
+name: CommandPad
+main: com.gmail.llmdlio.CommandPad.CommandPad
+version: 0.0.1
+
+commands:
+  commandpad:
+    description: Base Command for CommandPad
+    usage: /<command>
+    permission: commandpad.default
+    permission-message: You don't have <permission>
+  commandpad reload:
+    description: Reload Command for CommandPad
+    usage: /<command>
+    permission: commandpad.reload
+    permission-message: You don't have <permission>  
+    
+permissions:
+  commandpad.*:
+    description: Gives access to all CommandPad commands.
+    children:
+      commandpad.reload: true
+      commandpad.default: true      
+      commandpad.create: true
+  commandpad.default:
+    description: Shows info about the plugin.
+    default: true        
+  commandpad.reload:
+    description: Allows you to reload the config.yml.
+    default: false
+  commandpad.create:
+    description: Allows you to create commandpad signs.
+    default: false
+  
